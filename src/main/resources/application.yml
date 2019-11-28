@@ -1,0 +1,16 @@
+server:
+  port: 31001
+
+spring:
+  cloud:    gateway:      default-filters:
+        - StripPrefix=1        - PreserveHostHeader      routes:
+        - id: baidu
+          uri: https://www.baidu.com          predicates:
+            - Path=/baidu/**          filters:            - Pre=true
+
+logging:
+  level:
+    root: info
+  pattern:
+    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}[%L] - %msg%n'
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}[%L] - %msg%n'
