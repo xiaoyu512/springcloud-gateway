@@ -2,11 +2,19 @@ server:
   port: 31001
 
 spring:
-  cloud:    gateway:      default-filters:
-        - StripPrefix=1        - PreserveHostHeader      routes:
+  cloud:
+    gateway:
+      default-filters:
+        - StripPrefix=1
+        - PreserveHostHeader
+      routes:
         - id: baidu
-          uri: https://www.baidu.com          predicates:
-            - Path=/baidu/**          filters:            - Pre=true
+          uri: https://www.baidu.com
+          predicates:
+            - Path=/baidu/**
+          filters:
+            - First=true
+            - Second=true
 
 logging:
   level:
