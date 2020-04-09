@@ -18,7 +18,7 @@ import java.util.List;
  * @date 2019-11-28 14:40:01
  */
 @Slf4j
-@Order(2)
+@Order(3)
 @Component
 public class SecondGatewayFilterFactory extends AbstractGatewayFilterFactory<SecondGatewayFilterFactory.Config> {
     public static final String ENABLED_KEY = "enabled";
